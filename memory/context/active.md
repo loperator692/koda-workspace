@@ -14,7 +14,7 @@ Finishing system-guide.md implementation
 - ✅ Groq + OpenAI keys added, OpenRouter model ID fixed
 - ✅ Antigravity + Gemini CLI plugins enabled in config (need OAuth login)
 - ✅ Agent templates created (architect, code-reviewer, security-reviewer, planner, researcher, writer)
-- ⬜ Nightly backup — blocked on GitHub PAT/SSH key from Clint
+- ✅ Nightly backup — 3 AM Denver, cron ID dfc0d7af, repo github.com/loperator692/koda-workspace
 - ⬜ Skills — waiting for friend's reference file
 - ⬜ Mac SSH setup (Remote Login needs enabling)
 - ⬜ Email/calendar integrations
