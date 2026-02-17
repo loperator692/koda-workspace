@@ -34,13 +34,38 @@
 | Machine | IP | SSH | Notes |
 |---|---|---|---|
 | casper-1 | 100.70.201.31 | ✅ port 22 open | Windows VM |
-| clintons-macbook-pro-1 | 100.65.123.28 | ❌ Remote Login off | Enable in System Settings → Sharing |
-| plextopia (Unraid) | 100.123.234.55 | TBD | Routes to Nextcloud on port 80 |
+| clintons-macbook-pro-1 | 100.65.123.28 | ✅ loperator@100.65.123.28 | macOS Darwin 21.6.0 (x86_64) |
+| plextopia (Unraid) | 100.123.234.55 | ✅ root@100.123.234.55 | SSH key installed at ~/.ssh/unraid_key |
 | Sparky (iPhone) | TBD | N/A | OpenClaw nodes for camera/location |
+
+## Unraid SSH
+- Host: root@100.123.234.55
+- Key: ~/.ssh/unraid_key (installed)
+- Usage: `ssh -i ~/.ssh/unraid_key root@100.123.234.55 "command"`
+
+## Email (Himalaya v1.1.0)
+- Binary: `/usr/local/bin/himalaya`
+- Config: `~/.config/himalaya/config.toml`
+- Accounts: `gmail` (default), `icloud`
+- Gmail: clint.poduska@gmail.com
+- iCloud: loperator@icloud.com
+- Usage: `himalaya envelope list` / `himalaya envelope list --account icloud`
+
+## Calendar (vdirsyncer + khal)
+- Sync: `vdirsyncer sync icloud_cal` (syncs iCloud CalDAV locally)
+- View: `khal list` (upcoming events)
+- Local store: `~/.local/share/calendars/icloud/`
+- Calendars: Clinton (home), Parenting, Family, Melissa, Workday
+- Config: `~/.config/vdirsyncer/config` + `~/.config/khal/config`
+- Note: Google Calendar needs OAuth2 setup (TODO)
+
+## Home Assistant
+- URL: http://172.17.0.1:8123 (confirmed running, needs token)
+- Token: TODO — Clint needs to provide Long-Lived Access Token
 
 ## TTS
 - Built-in `tts` tool available
-- Preferred voice: <!-- TBD -->
+- Preferred voice: <!-- TBD — ask Clint: built-in vs ElevenLabs? -->
 
 ---
 
