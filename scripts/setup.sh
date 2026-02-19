@@ -79,16 +79,28 @@ fi
 
 # ── 3. SSH keys (Unraid) ──────────────────────────────────────────────────────
 echo ""
-echo "[3/3] SSH key check..."
+echo "[3/3] Restoring SSH keys..."
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+KEY_SRC="$SCRIPT_DIR/../config/unraid_key"
+
 if [ -f ~/.ssh/unraid_key ]; then
   echo "✅ Unraid SSH key already present"
+elif [ -f "$KEY_SRC" ]; then
+  cp "$KEY_SRC" ~/.ssh/unraid_key
+  cp "${KEY_SRC}.pub" ~/.ssh/unraid_key.pub
+  chmod 600 ~/.ssh/unraid_key
+  echo "✅ Unraid SSH key restored from workspace"
+  # Test connectivity
+  if ssh -i ~/.ssh/unraid_key -o ConnectTimeout=5 -o StrictHostKeyChecking=no root@100.123.234.55 "echo ok" 2>/dev/null | grep -q ok; then
+    echo "✅ Unraid SSH connection verified"
+  else
+    echo "⚠️  Key restored but Unraid not reachable (Tailscale may be down, or public key not yet added to Unraid)"
+  fi
 else
-  echo "⚠️  Unraid SSH key missing (~/.ssh/unraid_key)"
-  echo "   Run: ssh-keygen -t ed25519 -f ~/.ssh/unraid_key"
-  echo "   Then: ssh-copy-id -i ~/.ssh/unraid_key root@100.123.234.55"
+  echo "⚠️  No SSH key found — run: ssh-keygen -t ed25519 -f ~/.ssh/unraid_key -N ''"
 fi
 
 echo ""
