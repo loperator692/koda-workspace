@@ -15,7 +15,7 @@
 - **Platform:** Unraid (Docker container)
 - **No CLI access:** Cannot run `openclaw` commands directly — edit config files + restart container
 - **Config location:** `/root/.openclaw/openclaw.json`
-- **Gateway tools** (cron/nodes/gateway): use `gatewayToken="koda-local-gateway"` + `gatewayUrl="ws://127.0.0.1:18789"`
+- **Gateway tools** (cron/nodes/gateway): use `gatewayToken="db45299fa7920129e8016d808429ba0ce0b45142f49ad8e4"` + `gatewayUrl="ws://127.0.0.1:18789"`
 
 ## Models
 - **Primary:** anthropic/claude-opus-4-6
@@ -43,13 +43,14 @@
 - Key: ~/.ssh/unraid_key (installed)
 - Usage: `ssh -i ~/.ssh/unraid_key root@100.123.234.55 "command"`
 
-## Email (Himalaya v1.1.0)
+## Email (Himalaya v1.2.0)
 - Binary: `/usr/local/bin/himalaya`
 - Config: `~/.config/himalaya/config.toml`
 - Accounts: `gmail` (default), `icloud`
 - Gmail: clint.poduska@gmail.com
 - iCloud: loperator@icloud.com
-- Usage: `himalaya envelope list` / `himalaya envelope list --account icloud`
+- Usage: `himalaya envelope list --page-size 10` / `himalaya envelope list --account icloud --page-size 10`
+- ✅ Both accounts tested and working (2026-02-19)
 
 ## Calendar (vdirsyncer + khal)
 - Sync: `vdirsyncer sync icloud_cal` (syncs iCloud CalDAV locally)
