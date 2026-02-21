@@ -10,7 +10,7 @@ System audit complete — cleanup and fixes in progress
 - ✅ Gateway token fixed: db45299fa7920129e8016d808429ba0ce0b45142f49ad8e4, ws://127.0.0.1:18789
 - ✅ Cron: weekly update check (Sun 4:05 AM Denver)
 - ✅ Cron: nightly backup (3 AM Denver, ID dfc0d7af) — last ran Feb 17
-- ✅ Cron: morning briefing (7:30 AM daily, ID 1752540c) — voice TTS to Telegram
+- ✅ Cron: morning briefing (7:30 AM daily, ID 1752540c) — voice TTS to Telegram, location-aware via calendar parsing
 - ✅ Tailscale via host plugin
 - ✅ Primary model: Sonnet (fixed back from Gemini Flash). Failover chain 6 models deep
 - ✅ Groq + OpenAI + OpenRouter keys configured
@@ -25,5 +25,5 @@ System audit complete — cleanup and fixes in progress
 - ⬜ v2 multi-agent swarm templates
 - ⬜ Antigravity/Gemini CLI OAuth login (needs browser)
 - ⬜ Mac SSH setup (enable Remote Login in System Settings → Sharing)
-- ⬜ Calendar (khal not installed — low priority)
+- ✅ Calendar (khal + vdirsyncer installed, iCloud syncing, used in morning briefing)
 - ⬜ Memory gap: no daily notes for Feb 17-18 (sessions happened but nothing recorded)

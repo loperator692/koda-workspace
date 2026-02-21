@@ -15,7 +15,7 @@
 - **Platform:** Unraid (Docker container)
 - **No CLI access:** Cannot run `openclaw` commands directly — edit config files + restart container
 - **Config location:** `/root/.openclaw/openclaw.json`
-- **Gateway tools** (cron/nodes/gateway): use `gatewayToken="db45299fa7920129e8016d808429ba0ce0b45142f49ad8e4"` + `gatewayUrl="ws://127.0.0.1:18789"`
+- **Gateway tools** (cron/nodes/gateway): use `gatewayToken="A-oJaou-rPqXa4guByRYI1lhVnSfROfN2rSVJ-UsOFQ"` + `gatewayUrl="ws://127.0.0.1:18789"`
 
 ## Models
 - **Primary:** anthropic/claude-opus-4-6
@@ -36,7 +36,7 @@
 | casper-1 | 100.70.201.31 | ✅ port 22 open | Windows VM |
 | clintons-macbook-pro-1 | 100.65.123.28 | ✅ loperator@100.65.123.28 | macOS Darwin 21.6.0 (x86_64) |
 | plextopia (Unraid) | 100.123.234.55 | ✅ root@100.123.234.55 | SSH key installed at ~/.ssh/unraid_key |
-| Sparky (iPhone) | TBD | N/A | OpenClaw nodes for camera/location |
+| Sparky (iPhone) | TBD | N/A | No OpenClaw iOS app yet — using calendar for location instead |
 
 ## Unraid SSH
 - Host: root@100.123.234.55
@@ -45,19 +45,22 @@
 
 ## Email (Himalaya v1.2.0)
 - Binary: `/usr/local/bin/himalaya`
-- Config: `~/.config/himalaya/config.toml`
+- Config: `~/.config/himalaya/config.toml` (persisted across restarts)
 - Accounts: `gmail` (default), `icloud`
-- Gmail: clint.poduska@gmail.com
-- iCloud: loperator@icloud.com
+- Gmail: clint.poduska@gmail.com (app password in config)
+- iCloud: loperator@icloud.com (app password in config)
 - Usage: `himalaya envelope list --page-size 10` / `himalaya envelope list --account icloud --page-size 10`
 - ✅ Both accounts tested and working (2026-02-19)
+- See `CREDENTIALS.md` for setup details
 
 ## Calendar (vdirsyncer + khal)
+- ✅ Installed and configured (2026-02-21)
 - Sync: `vdirsyncer sync icloud_cal` (syncs iCloud CalDAV locally)
-- View: `khal list` (upcoming events)
+- View: `khal list today 10d` (upcoming events)
 - Local store: `~/.local/share/calendars/icloud/`
 - Calendars: Clinton (home), Parenting, Family, Melissa, Workday
 - Config: `~/.config/vdirsyncer/config` + `~/.config/khal/config`
+- **Used in morning briefing** for location-based weather (parses hotel/travel events)
 - Note: Google Calendar needs OAuth2 setup (TODO)
 
 ## Home Assistant

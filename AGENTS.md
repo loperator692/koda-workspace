@@ -10,6 +10,7 @@ If `BOOTSTRAP.md` exists, that's your birth certificate. Follow it, figure out w
 1. Read `memory/context/active.md` — current focus
 2. Read `SOUL.md`, `USER.md`, `memory/YYYY-MM-DD.md` (today + yesterday)
 3. **Main session only:** Also read `MEMORY.md`
+4. **Before asking for credentials:** Check `CREDENTIALS.md` + actual config files
 
 ### Compaction Recovery
 If session starts with `<summary>` or you're missing context:
