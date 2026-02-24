@@ -9,7 +9,7 @@ Calendar-based location detection fully working — briefing ready for tomorrow 
 - ✅ Memory system (active.md, daily notes, archive)
 - ✅ Gateway token fixed: A-oJaou-rPqXa4guByRYI1lhVnSfROfN2rSVJ-UsOFQ, ws://127.0.0.1:18789
 - ✅ Cron: weekly update check (Sun 4:05 AM Denver)
-- ✅ Cron: nightly backup (3 AM Denver, ID dfc0d7af) — last ran Feb 17
+- ✅ Cron: nightly backup (3 AM Denver, ID dfc0d7af) — last ran Feb 22 03:00
 - ✅ Cron: morning briefing (7:30 AM daily, ID 1752540c) — voice TTS to Telegram, location-aware via calendar parsing
 - ✅ Tailscale via host plugin
 - ✅ Primary model: Sonnet (fixed back from Gemini Flash). Failover chain 6 models deep
@@ -20,7 +20,8 @@ Calendar-based location detection fully working — briefing ready for tomorrow 
 - ✅ Nightly backup to github.com/loperator692/koda-workspace — pushed 2026-02-19
 
 ## Remaining
-- ⬜ Skills — full set pending (25 skills in guide)
+- ✅ Gateway watchdog (every 5 min, ID 7ded6ecd)
+- ✅ Core skills: skill-audit, continuous-learning, orchestration, proactive-agent, ai-compound
 - ⬜ focus-group agent personas (12 personas per guide)
 - ⬜ v2 multi-agent swarm templates
 - ⬜ Antigravity/Gemini CLI OAuth login (needs browser)
